@@ -15,6 +15,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
 set smartindent
 set autoindent
 
@@ -26,7 +27,7 @@ set incsearch
 set showmatch
 
 set cursorline
-hi CursorLine cterm=NONE ctermbg=234 ctermfg=NONE
+hi CursorLine cterm=bold ctermbg=238 ctermfg=NONE
 
 call plug#begin()
     Plug 'tpope/vim-surround'
