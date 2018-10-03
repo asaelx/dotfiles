@@ -28,6 +28,9 @@ set showmatch
 
 set cursorline
 hi CursorLine cterm=bold ctermbg=238 ctermfg=NONE
+hi Search cterm=NONE ctermbg=205 ctermfg=15
+
+autocmd BufRead,BufNewFile *.rb set shiftwidth=2
 
 call plug#begin()
     Plug 'tpope/vim-surround'
