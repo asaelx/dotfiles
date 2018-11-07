@@ -18,13 +18,10 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-; background = #992c3e50
 background = #508395a7
-; background-alt = #34495e
 background-alt = #908395a7
-;foreground = ${xrdb:color7:#222}
-foreground = #c7ecee
-foreground-alt = #c7ecee
+foreground = #FFFFFF
+foreground-alt = #FFFFFF
 primary = #ffb52a
 secondary = #e74c3c
 alert = #bd2c40
@@ -54,13 +51,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = NotoSans:pixelsize=10;1
 font-1 = FontAwesome5Free:style=Solid:pixelsize=12:antialias=true;3
 font-2 = FontAwesome5Brands:style=Solid:pixelsize=12:antialias=true;3
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem alsa memory cpu battery temperature date powermenu
+modules-right = playing filesystem alsa memory cpu battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -90,7 +87,7 @@ height = 30
 radius = 0.0
 fixed-center = false
 
-background = ${colors.background}
+background = #992c3e50
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -133,6 +130,8 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+; bottom = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -450,6 +449,13 @@ ramp-2 = 
 ramp-3 = 
 ramp-foreground = ${colors.foreground-alt}
 
+[module/playing]
+type = custom/script
+interval = 5
+exec = ~/Code/scripts/playing.sh
+tail = true
+label = %output%
+
 [module/powermenu]
 type = custom/menu
 
@@ -491,3 +497,4 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+

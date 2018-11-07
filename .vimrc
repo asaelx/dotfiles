@@ -52,3 +52,6 @@ let g:user_emmet_settings = {
 \        'comment_type': 'lastonly'
 \    }
 \}
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
