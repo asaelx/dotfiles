@@ -1,20 +1,18 @@
-# If you come from bash you might have to change your $PATH.
+# Fix vim lang
+export LC_ALL=en_US.UTF-8
+
+# PATH
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/asaelx/.oh-my-zsh
 
 # Theme
-ZSH_THEME="steeef"
+ZSH_THEME="af-magic"
 
 # Plugins
-plugins=(
-  git
-)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Fix Tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
+source $HOME/.bash_aliases
