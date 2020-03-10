@@ -10,6 +10,8 @@ call plug#begin()
     Plug 'airblade/vim-gitgutter'
     Plug 'Valloric/YouCompleteMe'
     Plug 'kien/ctrlp.vim'
+    Plug 'sirver/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
     Plug 'tpope/vim-commentary'
     Plug 'ntpeters/vim-better-whitespace'
@@ -18,18 +20,18 @@ call plug#begin()
     Plug 'chrisbra/colorizer'
     Plug 'vim-scripts/HTML-AutoCloseTag'
     Plug 'junegunn/goyo.vim'
-    Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'ntk148v/vim-horizon'
+    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 call plug#end()
 
 set number
 set relativenumber
 
-filetype on
+filetype plugin indent on
 syntax on
 set termguicolors
 set background=dark
-colorscheme horizon
+colorscheme challenger_deep
 
 set hidden
 set history=100
@@ -37,8 +39,7 @@ set undolevels=1000
 set viminfo='20,<1000
 set backspace=indent,eol,start
 
-filetype indent on
-"set nowrap
+set nowrap
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -56,9 +57,6 @@ set showmatch
 
 set cursorline
 hi CursorLine cterm=bold ctermbg=238 ctermfg=NONE
-hi Search cterm=NONE ctermbg=205 ctermfg=15
-
-autocmd BufRead,BufNewFile *.rb set shiftwidth=2
 
 let user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_settings = {
@@ -67,6 +65,6 @@ let g:user_emmet_settings = {
 \    }
 \}
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"

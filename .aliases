@@ -1,0 +1,21 @@
+#       _ _
+#  __ _| (_) __ _ ___  ___  ___
+# / _` | | |/ _` / __|/ _ \/ __|
+#| (_| | | | (_| \__ \  __/\__ \
+# \__,_|_|_|\__,_|___/\___||___/
+#
+
+# Oh My Zsh
+alias ze="vim ~/.zshrc"
+alias zs="source ~/.zshrc"
+
+# youtube-dl
+alias dl="youtube-dl"
+alias dl4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
+
+# exa
+alias l="exa -lagh"
+alias ll="exa -lgh"
+
+# fswatch
+alias watchd="fswatch -o ~/Downloads | xargs -n1 -I{} sort"
