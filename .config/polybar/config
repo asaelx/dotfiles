@@ -17,22 +17,123 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #508395a7
-background-alt = #908395a7
+background = #303952
+background-alt = #778beb
 foreground = #FFFFFF
 foreground-alt = #FFFFFF
-primary = #ffb52a
+primary = #778beb
 secondary = #e74c3c
 alert = #bd2c40
 
 [bar/hdmi]
-monitor = ${env:MONITOR:HDMI1}
+monitor = ${env:MONITOR:HDMI-A-0}
+width = 100%
+height = 40
+radius = 0.0
+fixed-center = false
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-top-size = 0
+border-bottom-size = 3
+border-bottom-color = #f3a683
+
+padding-left = 0
+padding-right = 5
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = GoogleSans:style=Bold:pixelsize=13;3
+font-1 = FontAwesome5Free:style=Solid:pixelsize=13:antialias=true;3
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=13:antialias=true;3
+
+modules-left = i3
+modules-center = date weather
+modules-right = alsa filesystem memory cpu battery temperature
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/dvi]
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
+radius = 0.0
+fixed-center = false
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-top-size = 0
+border-bottom-size = 3
+border-bottom-color = #f3a683
+
+padding-left = 0
+padding-right = 5
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = GoogleSans:style=Bold:pixelsize=11;3
+font-1 = FontAwesome5Free:style=Solid:pixelsize=11:antialias=true;3
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=11:antialias=true;3
+
+modules-left = i3
+modules-center = date weather
+modules-right = alsa memory cpu battery temperature
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/laptop]
+monitor = ${env:MONITOR:eDP-1}
+width = 100%
+height = 40
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
@@ -41,23 +142,24 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 15
-border-bottom-size = 0
-border-color = #00000000
+border-size = 0
+border-top-size = 0
+border-bottom-size = 3
+border-bottom-color = #f3a683
 
 padding-left = 0
-padding-right = 2
+padding-right = 5
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans:pixelsize=10;1
+font-0 = GoogleSans:style=Bold:pixelsize=10;3
 font-1 = FontAwesome5Free:style=Solid:pixelsize=12:antialias=true;3
 font-2 = FontAwesome5Brands:style=Solid:pixelsize=12:antialias=true;3
 
-modules-left = bspwm i3
-modules-center = mpd
-modules-right = playing filesystem alsa memory cpu battery temperature date powermenu
+modules-left = i3 playing
+modules-center = date
+modules-right = alsa memory cpu battery temperature
 
 tray-position = right
 tray-padding = 2
@@ -79,38 +181,38 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/vga]
-monitor = ${env:MONITOR:DP1}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
-height = 30
+height = 40
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
 fixed-center = false
 
-background = #992c3e50
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
+border-top-size = 0
+border-bottom-size = 3
+border-color = #f3a683
 
 padding-left = 0
-padding-right = 2
+padding-right = 3
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=true;3
-font-2 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=true;3
-; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-2 = siji:pixelsize=10;1
+font-0 = GoogleSans:style=Bold:pixelsize=12;3
+font-1 = FontAwesome5Free:style=Solid:pixelsize=12:antialias=true;3
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=12:antialias=true;3
 
-modules-left = bspwm i3
-modules-center = mpd
-modules-right = filesystem alsa memory cpu battery temperature date powermenu
+modules-left = i3 playing
+modules-center = date
+modules-right = alsa memory cpu battery temperature
 
 tray-position = right
 tray-padding = 2
@@ -130,8 +232,6 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-; bottom = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -157,7 +257,7 @@ label-indicator-underline = ${colors.secondary}
 type = internal/fs
 interval = 25
 
-mount-0 = /home
+mount-0 = /
 
 label-mounted =  %free%
 label-unmounted = %mountpoint% not mounted
@@ -262,16 +362,18 @@ card = intel_backlight
 type = internal/cpu
 interval = 1
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+; format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #3498db
+format-underline = #003498db
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+; format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #2ecc71
+format-underline = #002ecc71
 label = %gb_used%
 
 [module/wlan]
@@ -316,7 +418,7 @@ format-disconnected =
 type = internal/date
 interval = 1.0
 
-date = %A, %d %B %Y
+date = %a, %b %d '%y
 date-alt = %Y-%m-%d%
 
 time = %H:%M:%S
@@ -324,9 +426,9 @@ time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #000a6cf5
 
-label =  %date%  %time%
+label = %date% · %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -373,7 +475,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-bar-volume-width = 30
+bar-volume-width = 15
 bar-volume-foreground-0 = #2ecc71
 bar-volume-foreground-1 = #2ecc71
 bar-volume-foreground-2 = #2ecc71
@@ -399,7 +501,8 @@ full-at = 98
 ; format-charging = <animation-charging> <label-charging>
 format-charging = <label-charging>
 format-charging-prefix = " "
-format-charging-underline = #f1c40f
+format-charging-prefix-foreground = #feca57
+format-charging-underline = #00f1c40f
 label-charging = ${self.label-discharging}
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -407,8 +510,8 @@ label-discharging = %percentage%
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix-foreground = #1abc9c
+format-full-underline = #001abc9c
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -435,7 +538,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #00f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -447,12 +550,22 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-3 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = #e74c3c
 
 [module/playing]
 type = custom/script
-interval = 5
-exec = ~/Code/scripts/playing.sh
+interval = 1
+exec = ~/.scripts/playing.sh
+tail = true
+label = %output%
+click-left = playerctl previous
+click-right = playerctl next
+click-middle = playerctl play-pause
+
+[module/weather]
+type = custom/script
+interval = 900
+exec = ~/.scripts/weather.sh
 tail = true
 label = %output%
 
