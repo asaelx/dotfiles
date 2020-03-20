@@ -7,8 +7,6 @@
 !     \/_/ \/_/\/__,_ /\/____/ \/_/ \/__/\/_/ \/___/  \/____/ \/__/\/___/
 !
 
-URxvt.termName: xterm-256color
-
 ! HiDPI
 Xft.dpi: 120
 Xcursor.size: 32

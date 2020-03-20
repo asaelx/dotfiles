@@ -15,6 +15,7 @@ then
         ".config/polybar"
         ".config/compton"
         ".config/dunst"
+        ".config/mpv"
     )
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
@@ -23,8 +24,9 @@ fi
 
 for dot in "${dotlist[@]}"
 do
-    src=$(pwd)/$dot
+    src=$(pwd)/$dot/
     dst=$HOME/$dot
-    echo -e "${Green}=> Creating symbolic link${Color_Off} $src ${Green}=>${Color_Off} ${Blue}$dst${Color_Off}"
-    ln -sfn $src $dst
+    echo $dst
+    # echo -e "${Green}=> Creating symbolic link${Color_Off} $src ${Green}=>${Color_Off} ${Blue}$dst${Color_Off}"
+    # ln -sfn $src $dst
 done
