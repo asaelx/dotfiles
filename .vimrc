@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'tpope/vim-surround'
     Plug 'airblade/vim-gitgutter'
     Plug 'Valloric/YouCompleteMe'
+    Plug 'scrooloose/nerdtree'
     Plug 'kien/ctrlp.vim'
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
