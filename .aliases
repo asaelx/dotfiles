@@ -19,7 +19,7 @@ alias dlc="dly -i --download-archive archive.txt"
 
 # transmission-remote
 alias tm="transmission-remote"
-alias tma="tm -a `xclip -o -sel clip`"
+alias tma="tm -a $(xclip -o -sel clip)"
 
 # exa
 alias l="exa -lagh"
@@ -27,3 +27,6 @@ alias ll="exa -lgh"
 
 # fswatch
 alias watchd="fswatch -o ~/Downloads | xargs -n1 -I{} sort"
+
+# subliminal
+alias subs="subliminal download -l en"

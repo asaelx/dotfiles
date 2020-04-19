@@ -24,9 +24,13 @@ fi
 
 for dot in "${dotlist[@]}"
 do
-    src=$(pwd)/$dot/
+    if [[ -d $dot ]]
+    then
+        src=$(pwd)/$dot/
+    else
+        src=$(pwd)/$dot
+    fi
     dst=$HOME/$dot
-    echo $dst
-    # echo -e "${Green}=> Creating symbolic link${Color_Off} $src ${Green}=>${Color_Off} ${Blue}$dst${Color_Off}"
-    # ln -sfn $src $dst
+    echo -e "${Green}=> Creating symbolic link${Color_Off} $src ${Green}=>${Color_Off} ${Blue}$dst${Color_Off}"
+    ln -sfn $src $dst
 done

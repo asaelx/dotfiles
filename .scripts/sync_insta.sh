@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rsync -varhuP --remove-source-files /home/asaelx/Pictures/Insta/ /run/media/asaelx/BLACK/Pictures/Random
+rsync -varhuP --remove-source-files /home/asaelx/Pictures/Insta/ /run/media/asaelx/STUFF/Backups/Insta
 
 if [ "$?" -eq "0" ]
 then
