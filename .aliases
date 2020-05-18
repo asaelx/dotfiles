@@ -19,7 +19,6 @@ alias dlc="dly -i --download-archive archive.txt"
 
 # transmission-remote
 alias tm="transmission-remote"
-alias tma="tm -a $(xclip -o -sel clip)"
 
 # exa
 alias l="exa -lagh"

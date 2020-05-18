@@ -16,10 +16,11 @@ then
         ".config/compton"
         ".config/dunst"
         ".config/mpv"
+        ".scripts"
     )
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
-    dotlist=( ".vimrc" ".aliases" ".tmux.conf" )
+    dotlist=( ".vimrc" ".aliases" ".tmux.conf" ".scripts" )
 fi
 
 for dot in "${dotlist[@]}"
