@@ -23,8 +23,9 @@ call plug#begin()
     Plug 'junegunn/goyo.vim'
     Plug 'camspiers/animate.vim'
     Plug 'majutsushi/tagbar'
+    Plug 'matze/vim-move'
     Plug 'ntk148v/vim-horizon'
-    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+    Plug 'embark-theme/vim', { 'as': 'embark' }
 call plug#end()
 
 set number
@@ -34,15 +35,19 @@ filetype plugin indent on
 syntax on
 set termguicolors
 set background=dark
-colorscheme horizon
+colorscheme embark
 
 set hidden
-set history=100
+set history=500
 set undolevels=1000
 set viminfo='20,<1000
+set nobackup
+set nowb
+set noswapfile
 set backspace=indent,eol,start
+set whichwrap+=<,>,h,l
 
-set nowrap
+" set nowrap
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -57,11 +62,24 @@ set ignorecase
 set incsearch
 set showmatch
 
+set lazyredraw
+set wildmenu
+
 set splitbelow
 set splitright
 set cursorline
-hi CursorLine cterm=bold ctermbg=238 ctermfg=NONE
-hi Search cterm=NONE ctermbg=205 ctermfg=15
+
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+let mapleader = ","
+
+map <space> /
+
+nmap <leader>w :w!<cr>
+nmap <leader>q :q!<cr>
 
 let user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_settings = {
@@ -70,6 +88,8 @@ let g:user_emmet_settings = {
 \    }
 \}
 
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+let g:move_key_modifier = 'S'

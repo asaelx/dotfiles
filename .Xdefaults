@@ -8,15 +8,14 @@
 !
 
 ! HiDPI
-Xft.dpi: 120
+Xft.dpi: 135
 Xcursor.size: 32
 
 ! transparency
 urxvt*depth: 32
 
 ! font
-! urxvt*font:     xft:FiraCode:size=11
-urxvt*font:     xft:CamingoCode:size=11
+urxvt*font:     xft:JetBrainsMono:size=11
 
 ! disable scrollbar
 urxvt*scrollBar: false

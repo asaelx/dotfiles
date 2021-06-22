@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-instadir="/home/asaelx/Pictures/Insta/"
+instadir="$HOME/Pictures/Insta/"
 Color_Off='\033[0m'
 Green='\033[0;32m'
 Blue='\033[0;34m'
 
-for file in /home/asaelx/Downloads/*.{jpg,jpeg,JPG,png,mp4}
+for file in $HOME/Downloads/*.{jpg,jpeg,JPG,png,mp4}
 do
     if [ -e "$file" ]
     then

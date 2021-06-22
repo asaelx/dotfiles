@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-find $PWD -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.JPG" -o -name "*.png" -o -name "*.PNG" \) | mpv -fs --image-display-duration=3 --loop-playlist --playlist=-
+img_duration=3
+extensions='.*\.\(jpg\|jpeg\|JPG\|png\|PNG\|mp4\|MP4\|mkv\|mov\|MOV\|webm\)'
+
+find "$PWD" -type f -regex $extensions | sort -R | mpv -fs --image-display-duration=$img_duration --loop-playlist --playlist=-

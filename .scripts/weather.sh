@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-export PATH=$HOME/.nvm/versions/node/v13.11.0/bin:$PATH
+export PATH=$HOME/.nvm/versions/node/v16.3.0/bin:$PATH
 
-weather | grep Temperature | awk '{print $2}'
+weather -C Mexico -c Monterrey | grep Temperature | awk '{print $2}'

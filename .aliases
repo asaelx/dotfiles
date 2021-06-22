@@ -11,8 +11,12 @@
 alias ze="vim ~/.zshrc"
 alias zs="source ~/.zshrc"
 
+# Go to directory
+# alias gd="cd $HOME/Downloads"
+
 # youtube-dl
 alias dl="youtube-dl"
+alias dl3="youtube-dl --extract-audio --audio-format mp3"
 alias dl4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 alias dly='dl4 -o "%(uploader)s - %(title)s (%(duration)ss) [%(resolution)s].%(ext)s"'
 alias dlc="dly -i --download-archive archive.txt"
@@ -21,11 +25,11 @@ alias dlc="dly -i --download-archive archive.txt"
 alias tm="transmission-remote"
 
 # exa
-alias l="exa -lagh"
-alias ll="exa -lgh"
+alias l="exa --icons --group-directories-first -lagh"
+alias ll="exa --icons --group-directories-first -lgh"
 
-# fswatch
-alias watchd="fswatch -o ~/Downloads | xargs -n1 -I{} sort"
+# move with rsync
+alias move="rsync -varzihuP --remove-source-files"
 
-# subliminal
-alias subs="subliminal download -l en"
+# mediainfo
+alias mi="mediainfo"

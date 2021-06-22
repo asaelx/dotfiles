@@ -35,7 +35,8 @@ while read ts
 do
     tstart=$(echo "$ts" | awk '{print $1}')
     tend=$(echo "$ts" | awk '{print $2}')
-    ffmpeg -ss $tstart -to $tend -i "$filename" -c:v libx264 -c:a aac "$partsdir/0$part.mp4" < /dev/null
+    part_str=$(printf "%02d" part)
+    ffmpeg -ss $tstart -to $tend -i "$filename" -c:v libx264 -c:a aac "$partsdir/$part_str.mp4" < /dev/null
     ((part++))
 done < "$tsfile"
 
