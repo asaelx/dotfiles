@@ -1,56 +1,51 @@
-/*******************************************************************************
+/**
  * ROFI Color theme
- * User: Rasi
- * Copyright: Rasmus Steinke
- *******************************************************************************/
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
 
 * {
-    bg: rgba ( 47, 52, 63, 100 % );
-    selected-normal-foreground:  rgba ( 255, 255, 255, 100 % );
-    foreground:                  rgba ( 193, 193, 193, 100 % );
+    selected-normal-foreground:  rgba ( 2, 20, 63, 100 % );
+    foreground:                  rgba ( 219, 223, 188, 100 % );
     normal-foreground:           @foreground;
-    /* alternate-normal-background: rgba ( 39, 50, 56, 100 % ); */
-    alternate-normal-background: @bg;
+    alternate-normal-background: rgba ( 0, 0, 0, 0 % );
     red:                         rgba ( 220, 50, 47, 100 % );
-    selected-urgent-foreground:  rgba ( 255, 24, 68, 100 % );
+    selected-urgent-foreground:  rgba ( 2, 20, 63, 100 % );
     blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-foreground:           rgba ( 255, 24, 68, 100 % );
-    alternate-urgent-background: rgba ( 39, 50, 56, 100 % );
-    active-foreground:           rgba ( 128, 203, 196, 100 % );
+    urgent-foreground:           rgba ( 255, 129, 255, 100 % );
+    alternate-urgent-background: rgba ( 0, 0, 0, 0 % );
+    active-foreground:           rgba ( 138, 196, 255, 100 % );
     lightbg:                     rgba ( 238, 232, 213, 100 % );
-    selected-active-foreground:  rgba ( 128, 203, 196, 100 % );
-    /* alternate-active-background: rgba ( 39, 50, 56, 100 % ); */
-    alternate-active-background: @bg;
-    /* background:                  rgba ( 39, 50, 56, 100 % ); */
-    background:                  @bg;
-    bordercolor:                 rgba ( 39, 50, 56, 100 % );
+    selected-active-foreground:  rgba ( 2, 20, 63, 100 % );
+    alternate-active-background: rgba ( 0, 0, 0, 0 % );
+    background:                  rgba ( 0, 0, 33, 87 % );
+    bordercolor:                 rgba ( 219, 223, 188, 100 % );
     alternate-normal-foreground: @foreground;
-    /* normal-background:           rgba ( 39, 50, 56, 100 % ); */
-    normal-background:           @bg;
+    normal-background:           rgba ( 0, 0, 208, 0 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 57, 66, 73, 100 % );
+    selected-normal-background:  rgba ( 219, 223, 188, 100 % );
     border-color:                @foreground;
     spacing:                     2;
-    separatorcolor:              rgba ( 52, 73, 94, 100 % );
-    urgent-background:           rgba ( 39, 50, 56, 100 % );
-    selected-urgent-background:  rgba ( 57, 66, 73, 100 % );
+    separatorcolor:              rgba ( 219, 223, 188, 100 % );
+    urgent-background:           rgba ( 0, 0, 208, 0 % );
+    selected-urgent-background:  rgba ( 255, 129, 127, 100 % );
     alternate-urgent-foreground: @urgent-foreground;
     background-color:            rgba ( 0, 0, 0, 0 % );
     alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 39, 50, 56, 100 % );
-    selected-active-background:  rgba ( 57, 66, 73, 100 % );
+    active-background:           rgba ( 0, 0, 208, 0 % );
+    selected-active-background:  rgba ( 138, 196, 255, 100 % );
 }
 #window {
     background-color: @background;
-    border:           0;
+    border:           1;
     padding:          5;
 }
 #mainbox {
     border:  0;
-    padding: 300;
+    padding: 0;
 }
 #message {
-    border:       1px dash 0px 0px ;
+    border:       2px 0px 0px ;
     border-color: @separatorcolor;
     padding:      1px ;
 }
@@ -59,7 +54,7 @@
 }
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       2px 0px 0px ;
     border-color: @separatorcolor;
     spacing:      2px ;
     scrollbar:    true;
@@ -111,8 +106,8 @@
     handle-width: 8px ;
     padding:      0;
 }
-#sidebar {
-    border:       2px dash 0px 0px ;
+#mode-switcher {
+    border:       2px 0px 0px ;
     border-color: @separatorcolor;
 }
 #button.selected {
@@ -132,7 +127,7 @@
     spacing:    0;
     text-color: @normal-foreground;
 }
-#prompt {
+#prompt, button{
     spacing:    0;
     text-color: @normal-foreground;
 }
