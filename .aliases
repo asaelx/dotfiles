@@ -15,11 +15,13 @@ alias zs="source ~/.zshrc"
 # alias gd="cd $HOME/Downloads"
 
 # youtube-dl
-alias dl="youtube-dl"
-alias dl3="youtube-dl --extract-audio --audio-format mp3"
-alias dl4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
+alias dl="yt-dlp"
+alias dl3="dl --extract-audio --audio-format mp3"
+alias dl4="dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 alias dly='dl4 -o "%(uploader)s - %(title)s (%(duration)ss) [%(resolution)s].%(ext)s"'
 alias dlc="dly -i --download-archive archive.txt"
+alias dlr='dl -o "$(ran).%(ext)s"'
+alias dlk="dlr --cookies $HOME/Downloads/tiktok.com_cookies.txt"
 
 # transmission-remote
 alias tm="transmission-remote"
@@ -33,3 +35,9 @@ alias move="rsync -varzihuP --remove-source-files"
 
 # mediainfo
 alias mi="mediainfo"
+
+# bat
+# alias cat="batcat"
+
+# mpv
+alias mpv="/mnt/c/Program\ Files/mpv/mpv.exe"

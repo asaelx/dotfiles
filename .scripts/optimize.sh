@@ -13,7 +13,7 @@ do
 
         echo "=> Converting $video"
 
-        ffmpeg -i "$video" -c:v libx265 "$output/$converted" && trash "$video"
+        ffmpeg -i "$video" -c:v libx265 -c:a aac "$output/$converted"
 
         echo "=> Done!"
     fi

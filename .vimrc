@@ -21,6 +21,7 @@ call plug#begin()
     Plug 'mileszs/ack.vim'
     Plug 'chrisbra/colorizer'
     Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
     Plug 'camspiers/animate.vim'
     Plug 'majutsushi/tagbar'
     Plug 'matze/vim-move'
@@ -93,3 +94,6 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 let g:move_key_modifier = 'S'
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
