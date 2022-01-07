@@ -10,7 +10,6 @@ call plug#begin()
     Plug 'tpope/vim-surround'
     Plug 'airblade/vim-gitgutter'
     Plug 'Valloric/YouCompleteMe'
-    Plug 'scrooloose/nerdtree'
     Plug 'kien/ctrlp.vim'
     Plug 'honza/vim-snippets'
     Plug 'mattn/emmet-vim'
@@ -26,6 +25,7 @@ call plug#begin()
     Plug 'majutsushi/tagbar'
     Plug 'matze/vim-move'
     Plug 'ntk148v/vim-horizon'
+    Plug 'severin-lemaignan/vim-minimap'
     Plug 'embark-theme/vim', { 'as': 'embark' }
 call plug#end()
 
