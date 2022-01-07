@@ -12,7 +12,7 @@ alias ze="vim ~/.zshrc"
 alias zs="source ~/.zshrc"
 
 # Go to directory
-# alias gd="cd $HOME/Downloads"
+alias gd="cd $HOME/Downloads"
 
 # youtube-dl
 alias dl="yt-dlp"
