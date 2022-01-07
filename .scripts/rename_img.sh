@@ -1,52 +1,38 @@
 #!/usr/bin/env bash
 
-for file in "$PWD"/*.{jpg,jpeg,JPG,png,PNG,gif,mov,mp4,MP4,txt}
+Color_Off='\033[0m'
+Green='\033[0;32m'
+Blue='\033[0;34m'
+Red='\033[0;31m'
+
+for file in "$PWD"/*.{jpg,jpeg,JPG,png,PNG,gif,mov,MOV,mp4,MP4,txt}
 do
     if [[ -f "$file" ]]
     then
         filename=$(basename "$file")
-        name="${filename%.*}"
         extension="${filename##*.}"
-        if [[ "$extension" == "jpg" ]]
-        then
-            echo "=> Renaming $file"
-            mv "$file" $(ran).jpg
-        elif [[ "$extension" == "jpeg" ]]
-        then
-            echo "=> Renaming $file"
-            mv "$file" $(ran).jpg
-        elif [[ "$extension" == "JPG" ]]
-        then
-            echo "=> Renaming $file"
-            mv "$file" $(ran).jpg
-        elif [[ "$extension" == "png" ]]
-        then
-            echo "=> Converting $file"
-            convert "$file" $(ran).jpg && rm "$file"
-        elif [[ "$extension" == "PNG" ]]
-        then
-            echo "=> Converting $file"
-            convert "$file" $(ran).jpg && rm "$file"
-        elif [[ "$extension" == "gif" ]]
-        then
-            echo "=> Converting $file"
-            ffmpeg -i "$file" -c:v libx264 -c:a aac $(ran).mp4 && rm "$file"
-        elif [[ "$extension" == "mov" ]]
-        then
-            echo "=> Converting $file"
-            ffmpeg -i "$file" -c:v libx264 -c:a aac $(ran).mp4 && rm "$file"
-        elif [[ "$extension" == "mp4" ]]
-        then
-            echo "=> Renaming $file"
-            mv "$file" $(ran).mp4
-        elif [[ "$extension" == "MP4" ]]
-        then
-            echo "=> Renaming $file"
-            mv "$file" $(ran).mp4
-        elif [[ "$extension" == "txt" ]]
-        then
-            echo "=> Removing $file"
-            rm "$file"
-        fi
+
+        case "$extension" in
+            jpg | jpeg | JPEG)
+                echo -e "${Green}=>${Color_Off} Renaming ${Blue}$file${Color_Off}"
+                mv "$file" $(ran).jpg
+                ;;
+            png | PNG)
+                echo "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
+                convert "$file" $(ran).jpg && rm "$file"
+                ;;
+            gif | mov | MOV)
+                echo "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
+                ffmpeg -i "$file" -c:v libx264 -c:a aac $(ran).mp4 && rm "$file"
+                ;;
+            mp4 | MP4)
+                echo "${Green}=>${Color_Off} Renaming ${Blue}$file${Color_Off}"
+                mv "$file" $(ran).mp4
+                ;;
+            txt)
+                echo "${Red}=>${Color_Off} Removing ${Red}$file${Color_Off}"
+                rm "$file"
+                ;;
+            esac
     fi
 done
