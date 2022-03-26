@@ -13,26 +13,27 @@ do
         extension="${filename##*.}"
 
         case "$extension" in
-            jpg | jpeg | JPEG)
+            jpg | jpeg | JPEG | JPG)
                 echo -e "${Green}=>${Color_Off} Renaming ${Blue}$file${Color_Off}"
                 mv "$file" $(ran).jpg
                 ;;
             png | PNG)
-                echo "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
+                echo -e "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
                 convert "$file" $(ran).jpg && rm "$file"
                 ;;
             gif | mov | MOV)
-                echo "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
+                echo -e "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
                 ffmpeg -i "$file" -c:v libx264 -c:a aac $(ran).mp4 && rm "$file"
                 ;;
             mp4 | MP4)
-                echo "${Green}=>${Color_Off} Renaming ${Blue}$file${Color_Off}"
+                echo -e "${Green}=>${Color_Off} Renaming ${Blue}$file${Color_Off}"
                 mv "$file" $(ran).mp4
                 ;;
             txt)
-                echo "${Red}=>${Color_Off} Removing ${Red}$file${Color_Off}"
+                echo -e "${Red}=>${Color_Off} Removing ${Red}$file${Color_Off}"
                 rm "$file"
                 ;;
             esac
     fi
 done
+

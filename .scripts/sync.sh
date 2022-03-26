@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-hdd="/mnt/f/Insta"
+hdd="/Volumes/BLACK/Insta"
 pinsta="$HOME/Pictures/Insta"
 
-rsync -varzhiuP --remove-source-files "$pinsta/" $hdd && rm -rf "$pinsta/*"
+rsync -varzhiuP --remove-source-files "$pinsta/" $hdd && trash $HOME/Pictures/Insta/*
