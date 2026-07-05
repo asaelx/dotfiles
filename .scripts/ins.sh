@@ -16,7 +16,8 @@ done
 
 cd $instadir
 
-find . -name '*([0-9])*' -exec rm -rf {} \;
+# find . -name '*([0-9])*' -exec rm -rf {} \;
+fdupes -Nd $instadir
 
 for file in *
 do
