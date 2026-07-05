@@ -19,7 +19,7 @@ do
                 ;;
             png | PNG)
                 echo -e "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
-                convert "$file" $(ran).jpg && rm "$file"
+                magick "$file" $(ran).jpg && rm "$file"
                 ;;
             gif | mov | MOV)
                 echo -e "${Green}=>${Color_Off} Converting ${Blue}$file${Color_Off}"
