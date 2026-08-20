@@ -31,7 +31,7 @@ alias l="eza --icons --group-directories-first -lagh"
 alias ll="eza --icons --group-directories-first -lgh"
 
 # move with rsync
-alias move='rsync -av --progress --stats --remove-source-files -e "ssh"'
+alias move="rsync -avh --omit-dir-times --partial-dir=.rsync-partial --remove-source-files"
 
 # mediainfo
 alias mi="mediainfo"
