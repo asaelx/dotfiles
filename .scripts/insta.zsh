@@ -165,24 +165,31 @@ echo "$EMOJI_OK Found ${#files[@]} files to process in $SRC"
 echo "$EMOJI_OK Processing files..."
 echo ""
 
+# The extension uses a 12-character hex ID, an optional carousel index, and
+# an optional duplicate counter added by the browser or the gallery.
+extension_stem_pattern='^([A-Za-z0-9._]{1,30})_[0-9A-Fa-f]{12}(_[0-9]{2})?( [(][0-9]+[)]| [0-9]+)?$'
+
 for file in "${files[@]}"; do
     fname="${file##*/}"
     ext="${fname##*.}"
     ext_lc="$(lowercase "$ext")"
+    stem="${fname%.*}"
 
-    # Username: everything before the first _[number] where number has at least 7 digits (Instagram style)
-    username=$(perl -pe 's/^(.+?)(?=_[0-9]{7,}(_|\.|$)).*/\1/' <<< "$fname")
-
-    if [[ -z "$username" || "$username" == "$fname" ]]; then
-        if [[ "$fname" == *_* ]]; then
-            username="${fname%%_*}"
-        else
-            username="unknown"
+    if [[ "$stem" =~ $extension_stem_pattern ]]; then
+        username="${match[1]}"
+    else
+        # Retain the previous extension's long numeric ID format and fallback.
+        username=$(perl -pe 's/^(.+?)(?=_[0-9]{7,}(_|\.|$)).*/\1/' <<< "$fname")
+        if [[ -z "$username" || "$username" == "$fname" ]]; then
+            if [[ "$fname" == *_* ]]; then
+                username="${fname%%_*}"
+            else
+                username="unknown"
+            fi
         fi
+        username="$(sanitize_username "$username")"
     fi
-    [[ -z "$username" ]] && username="unknown"
-
-    username="$(sanitize_username "$username")"
+    [[ "$username" == . || "$username" == .. ]] && username="unknown"
 
     dest_folder="$DEST/$username"
     if [[ ! -d "$dest_folder" && -z "${folders_actually_created[$username]:-}" ]]; then
